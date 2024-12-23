@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,10 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RadioButton maleRb, femaleRb;
     String result;
     RadioGroup radioGroup;
+    ToggleButton toggleButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toggleButton = findViewById(R.id.toggleBtn);
 
         // Initialize the views
         resultTv = findViewById(R.id.displaytxt);
@@ -40,6 +44,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         maleRb = findViewById(R.id.maleRb);
         femaleRb = findViewById(R.id.femaleRb);
         radioGroup = findViewById(R.id.radioGroup);
+        // Set ToggleButton listener
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(getApplicationContext(), "On Wifi", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Off Wifi", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
     ////process 1
 //        submitBtn.setOnClickListener(new View. OnClickListener() {
@@ -51,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //
 //            }
 //        });
+
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.displaytxt) {
@@ -87,4 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Toast.makeText(this, "" + result, Toast.LENGTH_SHORT).show();
     }
+
+
+
                 }
