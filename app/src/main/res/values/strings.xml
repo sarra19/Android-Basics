@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string name="image_button_description">This is an example image button</string>
+</resources>

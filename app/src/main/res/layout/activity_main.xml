@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/displaytxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B63F72"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:text="Hello World!"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_text_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableStart="@drawable/baseline_text_fields_24"
+        android:drawablePadding="5dp"
+        android:hint="Enter your name"
+        android:inputType="text"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:textColorHint="#CD0505"
+        tools:layout_editor_absoluteY="40dp"
+        app:layout_constraintTop_toBottomOf="@id/displaytxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#8BC34A"
+        android:text="Submit"
+        tools:layout_editor_absoluteY="90dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/iamgeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/image_button_description"
+        android:src="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteY="138dp"
+        app:layout_constraintTop_toBottomOf="@id/submitBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/simpleToastBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple Toast"
+        app:layout_constraintTop_toBottomOf="@id/iamgeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/customToastBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:text="Custom Toast"
+        app:layout_constraintTop_toBottomOf="@id/simpleToastBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/customToastBtn"
+
+        tools:ignore="MissingConstraints">
+
+    <RadioButton
+        android:id="@+id/maleRb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textColor="#2196F3"
+        android:textSize="20sp"/>
+        <RadioButton
+            android:id="@+id/femaleRb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FeMale"
+            android:textColor="#2196F3"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showResult"
+        android:text="save"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
